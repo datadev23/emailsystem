@@ -1,0 +1,37 @@
+<?php 
+
+/**
+ * Supporting functions.
+ */
+
+/**
+ * Implements hook_menu().
+ *
+ * Set up a page with an e-mail contact form on it.
+ */
+
+function emailsystem_menu() {
+	
+
+	$items['email'] = array(
+    'title' => 'Contact form',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('emailsystem_form'),
+    'access arguments' => array('access content'),
+
+	);
+
+	return $items;
+}
+
+function emailsystem_form() {
+
+	$form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('E-mail address'),
+    '#required' => TRUE,
+
+	);
+
+	return $form;
+}
