@@ -24,6 +24,12 @@ function emailsystem_menu() {
 	return $items;
 }
 
+/**
+ * Implements hook_form().
+ *
+ * This creates the form
+ */
+
 function emailsystem_form() {
 
 	$form['email'] = array(
@@ -44,4 +50,28 @@ function emailsystem_form() {
 	);
 
 	return $form;
+}
+
+/**
+ * Implements hook_validate().
+ *
+ * This creates the form
+ */
+
+/**
+ * Validation handler for email
+ *
+ * @param array $form
+ *   The $form is an associatve array of form elements.
+ * @param array $form_state
+ *   The $form_state is a associatve array.
+ */
+
+function emailsystem_form_validate($form, &$form_state) {
+
+if (!valid_email_address($form_state['values']['email'])) {
+    form_set_error('email', t('That e-mail address is not valid.'));
+  }
+
+
 }
