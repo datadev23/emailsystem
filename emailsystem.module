@@ -30,7 +30,17 @@ function emailsystem_form() {
     '#type' => 'textfield',
     '#title' => t('E-mail address'),
     '#required' => TRUE,
+	);
 
+	$form['message'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Message'),
+    '#required' => TRUE,
+	);
+
+	$form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit')
 	);
 
 	return $form;
