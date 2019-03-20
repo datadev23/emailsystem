@@ -75,3 +75,15 @@ if (!valid_email_address($form_state['values']['email'])) {
 
 
 }
+
+/**
+ *  Submit handler for email
+ *
+ * @param array $form
+ *   The $form is an associatve array of form elements.
+ * @param array $form_state
+ *   The $form_state is a associatve array.
+ */
+function emailsystem_form_submit($form, &$form_state) {
+  drupal_set_message("email submitted");
+}
